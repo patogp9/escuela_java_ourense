@@ -17,7 +17,7 @@ public class Main {
         boolean flag = true;
         char ch = 'A';
         String s = "Lorem Ipsum";
-        String ex[] = {"Ludicolo", "Vileplume", "Exeggutor", "Banette", "Espeon", "Claydol"};
+        String ex[] = {"Ludicolo", "Amoongus", "Exeggutor", "Banette", "Espeon", "Claydol"};
 
         if (flag == true) {
             System.out.println("Byte: " + b + ";\nInt: " + i + ";\nLong: "
