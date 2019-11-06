@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import pkg01_introjava.Bucles;
+import pkg01_funcionesbasicas.Bucles;
 
 /**
  *

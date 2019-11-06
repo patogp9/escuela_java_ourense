@@ -1,5 +1,7 @@
 package pkg01_introjava;
 
+import pkg01_funcionesbasicas.Operadores;
+import pkg01_funcionesbasicas.Bucles;
 import java.util.ArrayList;
 import java.util.Arrays;
 
