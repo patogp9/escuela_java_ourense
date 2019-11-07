@@ -25,5 +25,9 @@ public abstract class Vehiculo {
     
     public abstract void avanzar();
     public abstract void mostrarEstado();
+     @Override
+    public String toString() {
+        return ("Tipo: " + tipo);
+    }
     
 }

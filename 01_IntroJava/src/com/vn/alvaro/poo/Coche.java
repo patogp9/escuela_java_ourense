@@ -46,7 +46,7 @@ public class Coche extends Vehiculo{
     }
 
     public void mostrarEstado() {
-        System.out.println("Coche: " + marca + " " + (arrancado ? "arrancado" : "apagado")+" Tipo: "+tipo);
+        System.out.println(this.toString());
     }
 
     /**
@@ -80,6 +80,10 @@ public class Coche extends Vehiculo{
     @Override
     public void avanzar(){
         System.out.println("Vroom vroom");
+    }
+     @Override
+    public String toString() {
+        return ("Coche: " + marca + " " + (arrancado ? "arrancado" : "apagado")+" Tipo: "+tipo);
     }
 
     /**

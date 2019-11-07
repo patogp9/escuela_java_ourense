@@ -11,17 +11,24 @@ package com.vn.alvaro.poo;
  */
 public class Tractor extends Vehiculo {
 
-    public Tractor(){
+    public Tractor() {
         super();
-        tipo=TipoVehiculo.TRACTOR;
+        tipo = TipoVehiculo.TRACTOR;
     }
+
     @Override
     public void avanzar() {
         System.out.println("NYOOOOOOOOOMMMMMM");
     }
+
     @Override
-    public void mostrarEstado(){
-        System.out.println("Tipo: "+tipo);
-}
+    public void mostrarEstado() {
+        System.out.println(this.toString());
+    }
+
+    @Override
+    public String toString() {
+        return ("Tipo: " + tipo);
+    }
 
 }

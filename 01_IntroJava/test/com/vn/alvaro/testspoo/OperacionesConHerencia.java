@@ -95,6 +95,8 @@ public class OperacionesConHerencia {
         for (int i = 0; misVehiculos.length > i; i++) {
             misVehiculos[i].mostrarEstado();
         }
+        
+        System.out.println("ToString: "+laGanja.toString());
         System.out.println("-----------------------");
 
     }
