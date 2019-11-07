@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Tipos de datos:\n");
+       /* System.out.println("Tipos de datos:\n");
         byte b = -128;
         int i = 9;
         long l = 10000000000000L;
@@ -36,5 +36,6 @@ public class Main {
         for (int w = 0; rrays.length > w; w++) {
             System.out.println(rrays[w]);
         }
+*/
     }
 }
