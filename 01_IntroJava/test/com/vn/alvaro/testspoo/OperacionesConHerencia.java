@@ -8,6 +8,8 @@ package com.vn.alvaro.testspoo;
 import com.vn.alvaro.poo.Coche;
 import com.vn.alvaro.poo.CocheRally;
 import com.vn.alvaro.poo.TipoVehiculo;
+import com.vn.alvaro.poo.Tractor;
+import com.vn.alvaro.poo.Vehiculo;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -30,7 +32,7 @@ public class OperacionesConHerencia {
         cr = new CocheRally();
         cr.setMarca("Supra");
         cr.setRozamiento(7f);
-        
+
     }
 
     @Before
@@ -61,9 +63,39 @@ public class OperacionesConHerencia {
         turismo.mostrarEstado();
         turismo.mostrarEstado();
     }
+
     @Test
-    public void testEnumerado(){
+    public void testEnumerado() {
         cr.setTipo(TipoVehiculo.RALLY);
-        System.out.println("Tipo: "+(long)cr.getTipo().ordinal());
+        System.out.println("Tipo: " + (long) cr.getTipo().ordinal() + " " + cr.getTipo());
+
+        Tractor tr = new Tractor();
+        tr.setTipo(TipoVehiculo.values()[1]);
+        System.out.println("Tractor, tipo: " + (long) tr.getTipo().ordinal() + " " + tr.getTipo());
+
+    }
+
+    @Test
+    public void testClaseAbstractas() {
+        // NO-> Vehiculo vehDesc = new Vehiculo();
+        Vehiculo vehDesc = new Coche("Rayo GTI");
+        Vehiculo vehPch = new Tractor();
+        Vehiculo laGanja = new CocheRally("GanjaBurn", 9f);
+
+        Vehiculo[] misVehiculos = {
+            vehDesc,
+            vehPch,
+            laGanja};
+
+        assertEquals(((CocheRally) laGanja).getMarca(), "GanjaBurn");
+
+        vehDesc.avanzar();
+        vehPch.avanzar();
+
+        for (int i = 0; misVehiculos.length > i; i++) {
+            misVehiculos[i].mostrarEstado();
+        }
+        System.out.println("-----------------------");
+
     }
 }

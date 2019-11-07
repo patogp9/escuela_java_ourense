@@ -9,6 +9,19 @@ package com.vn.alvaro.poo;
  *
  * @author PC
  */
-public class Tractor extends Vehiculo{
-    
+public class Tractor extends Vehiculo {
+
+    public Tractor(){
+        super();
+        tipo=TipoVehiculo.TRACTOR;
+    }
+    @Override
+    public void avanzar() {
+        System.out.println("NYOOOOOOOOOMMMMMM");
+    }
+    @Override
+    public void mostrarEstado(){
+        System.out.println("Tipo: "+tipo);
+}
+
 }
