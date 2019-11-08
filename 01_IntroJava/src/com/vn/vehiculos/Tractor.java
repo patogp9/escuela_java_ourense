@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vn.alvaro.poo;
+package com.vn.vehiculos;
 
 /**
  *
@@ -22,13 +22,13 @@ public class Tractor extends Vehiculo {
     }
 
     @Override
-    public void mostrarEstado() {
-        System.out.println(this.toString());
+    public String toString() {
+        return ("Tipo: " + tipo);
     }
 
     @Override
-    public String toString() {
-        return ("Tipo: " + tipo);
+    public void mover(float metros) {
+        avanzar();
     }
 
 }

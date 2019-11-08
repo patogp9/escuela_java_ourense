@@ -5,9 +5,9 @@
  */
 package com.vn.alvaro.testspoo;
 
-import com.vn.alvaro.poo.Coche;
-import com.vn.alvaro.poo.CocheRally;
-import com.vn.alvaro.poo.FabricaCoches;
+import com.vn.vehiculos.Coche;
+import com.vn.vehiculos.CocheRally;
+import com.vn.vehiculos.FabricaCoches;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;

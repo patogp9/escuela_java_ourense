@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vn.alvaro.poo;
+package com.vn.vehiculos;
+
+import com.vn.sistemasdesplaz.interfaces.Desplazable;
 
 
 
@@ -11,7 +13,7 @@ package com.vn.alvaro.poo;
  *
  * @author PC
  */
-public abstract class Vehiculo {
+public abstract class Vehiculo implements Desplazable{
 
     protected TipoVehiculo tipo;
 
@@ -22,9 +24,10 @@ public abstract class Vehiculo {
     public void setTipo(TipoVehiculo tipo) {
         this.tipo = tipo;
     }
-    
+    public void mostrarEstado() {
+        System.out.println(this.toString());
+    }
     public abstract void avanzar();
-    public abstract void mostrarEstado();
      @Override
     public String toString() {
         return ("Tipo: " + tipo);

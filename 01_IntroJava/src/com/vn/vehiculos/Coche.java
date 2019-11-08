@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vn.alvaro.poo;
+package com.vn.vehiculos;
+
+import com.vn.sistemasdesplaz.interfaces.Desplazable;
 
 /**
  *
@@ -45,10 +47,6 @@ public class Coche extends Vehiculo{
         return arrancado;
     }
 
-    public void mostrarEstado() {
-        System.out.println(this.toString());
-    }
-
     /**
      * @return the marca
      */
@@ -84,6 +82,11 @@ public class Coche extends Vehiculo{
      @Override
     public String toString() {
         return ("Coche: " + marca + " " + (arrancado ? "arrancado" : "apagado")+" Tipo: "+tipo);
+    }
+
+    @Override
+    public void mover(float metros) {
+       avanzar();
     }
 
     /**
