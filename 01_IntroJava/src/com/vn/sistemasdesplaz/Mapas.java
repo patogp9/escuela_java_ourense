@@ -21,5 +21,6 @@ public class Mapas {
         mapas.put("to", new Coche("Toyota"));
         mapas.put("se", new Coche("Seat"));
         System.out.println("");
+        
     }
 }
