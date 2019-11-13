@@ -5,7 +5,6 @@
  */
 package com.vn.dao;
 
-import com.vn.sistemasdesplaz.IGenericDao;
 import com.vn.vehiculos.Coche;
 
 /**

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vn.sistemasdesplaz;
+package com.vn.dao;
 
 /**
  *
@@ -12,9 +12,10 @@ package com.vn.sistemasdesplaz;
 public interface IGenericDao<T> {
     
     
-    void create(T object) throws Exception;
+    T create(T object) throws Exception;
     T returnByIndex(int index);
-    void modify(T object, int index);
+    T modify(T object, int index);
+    void remove(int index);
     
     
 }

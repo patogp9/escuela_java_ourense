@@ -24,15 +24,22 @@ public class TestDaoUser {
      public void testUsuarios() {
          DaoUserList dull = new DaoUserList();
          dull.create("patogp9", 21);
-         dull.create("arrobensen",3);
+         dull.create("arrobensen",9);
          dull.create("LunaKi", 9);
          
          System.out.println(dull.returnByName("LunaKi").getNombre()+" "+dull.returnByName("LunaKi").getEdad());
          System.out.println(dull.returnByIndex(1).getNombre()+" "+dull.returnByIndex(1).getEdad());
          
-         dull.modify(new User("Robinson",33), 1);
+         dull.modificar("Robinson",3, 1);
          System.out.println(dull.returnByIndex(1).getNombre()+" "+dull.returnByIndex(1).getEdad());
          
          
+         String x = dull.returnByIndex(2).getNombre();
+         dull.remove(2);
+         try{
+             System.out.println(dull.returnByName("LunaKi").getNombre()+" "+dull.returnByName("LunaKi").getEdad());
+         }catch(NullPointerException npe){
+             System.out.println("Se eliminó a "+x);
+         }
      }
 }

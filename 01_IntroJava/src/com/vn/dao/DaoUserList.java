@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.vn.dao;
+
 /**
  *
  * @author PC
@@ -14,7 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-public class DaoUserList implements IDaoUser{
+
+public class DaoUserList implements IDaoUser {
 
     private List<User> userList;
 
@@ -29,34 +31,43 @@ public class DaoUserList implements IDaoUser{
 
     @Override
     public User returnByName(String nombre) {
-        for(User usuario : userList){
-            if(usuario.getNombre().equals(nombre)){
+        for (User usuario : userList) {
+            if (usuario.getNombre().equals(nombre)) {
                 return usuario;
             }
         }
         return null;
     }
 
-    @Override
     public void create(String nombre, int edad) {
         try {
-            create(new User(nombre,edad));
+            create(new User(nombre, edad));
         } catch (Exception ex) {
             Logger.getLogger(DaoUserList.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
-    public void create(User object) throws Exception {
-       userList.add((User) object);
+    public User create(User object) throws Exception {
+        userList.add((User) object);
+        return object;
     }
 
     @Override
-    public void modify(User object, int index) {
-    userList.set(index, object);
+    public User modify(User object, int index) {
+        userList.set(index, object);
+        return object;
     }
 
-    
+    public void modificar(String nombre, int edad, int index) {
 
-    
+        modify(new User(nombre, edad), index);
+
+    }
+
+    @Override
+    public void remove(int index) {
+        userList.remove(index);
+    }
+
 }
