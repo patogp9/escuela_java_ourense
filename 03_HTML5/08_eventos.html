@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>Evento con listener</label>
+    <input id="btn_listoinput" />
+    <input id="btn_listo" type="button" />
+    <div id="btn_listoinfo"></div>
+    <label>Evento con listener 2</label>
+    <input id="btn_listoxinput" />
+    <input id="btn_listox" type="button" />
+    <div id="btn_listoxinfo"></div>
+    <br />
+    <FORM>
+        <INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh">
+    </FORM>
+    <script>
+        let input_listo = document.getElementById("btn_listoinput");
+        let btn_listo = document.getElementById("btn_listo");
+        let input_listox = document.getElementById("btn_listoxinput");
+        let btn_listox = document.getElementById("btn_listox");
+        btn_listo.value = "Pulsa machooo";
+        btn_listox.value = "Pulsa machooo";
+        btn_listo.addEventListener("click", funCallBackPulse);
+        btn_listo.addEventListener("click", funCallBackPulse2);
+        btn_listox.addEventListener("click", funCallBackPulse);
+        btn_listox.addEventListener("click", funCallBackPulse2);
+
+        function funCallBackPulse(evento) {
+            var randomColor = "#"+((1<<24)*Math.random()|0).toString(16); 
+            var randomColor2 = "#"+((1<<24)*Math.random()|0).toString(16); 
+            var id = evento.currentTarget.id;
+            var idinfo = id + "info"
+            var idinput = id + "input"
+            document.getElementById(idinput).value = "oleeeee ;-) " + evento.type;
+            let info_evento = document.getElementById(idinfo);
+            info_evento.innerHTML = "ID boton = " + evento.currentTarget.id;
+            info_evento.style = "background-color:"+randomColor+";border:"+randomColor2+" solid;";
+
+        }
+        function funCallBackPulse2(evento) {
+            var randomColor = "#"+((1<<24)*Math.random()|0).toString(16); 
+            document.getElementsByTagName("body")[0].style = "background-color:"+randomColor;
+        }
+
+    </script>
+
+</body>
+
+</html>
