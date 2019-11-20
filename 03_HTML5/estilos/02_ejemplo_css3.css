@@ -6,7 +6,7 @@ body {
     font-size: 1.2em;   /* Propiedad que se hereda de padres a hijos */
 }
 header {
-    background-color: rgb(182, 202, 221); */
+    background-color: rgb(182, 202, 221); 
 }
 /* selector varios */
 h1, h2, h3 {
@@ -44,6 +44,14 @@ a:hover {
     top: 5px;
     display: inline-block;
 }
+.spct0, .spct00{
+    color:magenta!important;
+    float:inline-start!important; 
+    padding:10px;  
+}
+.divArtic{
+    padding: 10px!important;
+}
 .marco-colocado {
     display: inline-block;
     width: 400px;
@@ -52,6 +60,21 @@ a:hover {
 /* Media queries, condiciones para seleccionar qué 
     etilos se aplican a qué dispositivos */
 .articulo {border: black solid;}
+.fancy_article{
+    border: purple outset;
+    background: rgb(255,255,255);
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,fuchsia);
+
+
+}
+.fancy_article>h4{
+    background: rgb(255,255,255);
+    background-image: linear-gradient(to right, moccasin,springgreen);
+}
+.fancy_article>h2{
+    background: rgb(255,255,255);
+    background-image: linear-gradient(to right, goldenrod,violet);
+}
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 992px) {
     article section {

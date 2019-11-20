@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>Evento con listener</label>
+    <input id="inputbtn1" />
+    <input id="btn1" type="button" value="pulsame" />
+    <div id="btn1info"></div>
+    <label>Evento con listener 2</label>
+    <input id="inputbtn2" />
+    <input id="btn2" type="button"value="pulsame" />
+    <div id="btn2info"></div>
+    <br />
+    <FORM>
+        <INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh">
+    </FORM>
+    <br />
+    <script src="js/09_class.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            let gestorEv1 = new GestorEventosES5("inputbtn1", "btn1", "btn1info");
+            let gestorEv2 = new GestorEventosES5("inputbtn2", "btn2", "btn2info");
+        });
+
+    </script>
+</body>
+
+</html>
