@@ -21,13 +21,13 @@ public class HolaCSSServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/css");
-        double increment = 0.15,fontsize=1.1;
+        double increment = 0.1,fontsize=1.1;
         try (PrintWriter salida = response.getWriter()) {
-            salida.print(".tonto{color:aqua!important;}");
-            salida.print("body{background-color:black;}");
-            salida.print("ul{background-color:mediumvioletred;} li{ color:honeydew;}");
+            salida.println(".tonto{\ncolor:aqua!important;\n}\n");
+            salida.println("body{\nbackground-color:black;\n}\n");
+            salida.println("ul{\nbackground-color:mediumvioletred;\n}\n\nli{\ncolor:honeydew;\n}\n");
             for(int i = 0; i<10;i++){
-                salida.print("#ashnikko_"+i+"{font-size:"+fontsize+"em; font-family:'Courier New', Courier, monospace;}");
+                salida.println("#ashnikko_"+i+"{\nfont-size:"+fontsize+"em; \nfont-family:'Courier New', Courier, monospace;\n}\n");
                 fontsize+=increment;
             }
         }
