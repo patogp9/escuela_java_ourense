@@ -20,6 +20,11 @@ public class DatosPersona { //POJO
         this.email = email;
         this.fibonacci = fibonacci;
     }
+     public DatosPersona(String nombre, String email) {
+        this.nombre = nombre;
+        this.email = email;
+        this.fibonacci = new int[]{0};
+    }
     
         private int[] fibonacci;
 
