@@ -16,29 +16,29 @@ import java.util.logging.Logger;
  *
  * @author pc
  */
-public class ConexionDerbyDB {
+public class ConexionMySqlDB {
     
-    public static final  String URL_CONEXION = "jdbc:derby:memory:db_users;create=true";
+    public static final  String URL_CONEXION = "jdbc:mysql://localhost:3306/db_usuarios";
     public static final  String USUARIO_DB = "root";
     public static final  String PASSWORD_DB = "1234";
     private static boolean driversCargados = false;
     
-    private  static void cargarDrivers() throws ClassNotFoundException, SQLException {
+    private  static void cargarDrivers() throws Exception {
         
-        Class.forName("org.apache.derby.jdbc.ClientDriver");
-        //DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
+        Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+        DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
     }
-    public static Connection obtenerConexion() throws SQLException, ClassNotFoundException {
+    public static Connection obtenerConexion() throws Exception {
         if (! driversCargados) {
             cargarDrivers();
-            crearDBUsuarios();
+            //crearDBUsuarios();
             driversCargados = true;
         }        
         return DriverManager.getConnection(
                 URL_CONEXION,
                 USUARIO_DB, PASSWORD_DB);
     }
-    private static void crearDBUsuarios() throws SQLException {
+    private static void crearDBUsuarios() throws Exception {
     	Connection con = DriverManager.getConnection(URL_CONEXION,USUARIO_DB, PASSWORD_DB);
     	Statement stmt = con.createStatement();
     	String createTableSQL = "CREATE TABLE usuario (\r\n" + 
