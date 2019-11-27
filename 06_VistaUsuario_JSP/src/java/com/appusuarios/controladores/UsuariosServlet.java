@@ -3,17 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vncontroladores;
+package com.appusuarios.controladores;
 
 
-import com.appusuarios.modelo.ServicioUsuarios;
+import com.appusuarios.modelo.logica.ChivatoServicios;
+import com.appusuarios.modelo.logica.ServicioUsuarios;
 import com.appusuarios.modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 
 
 /**
@@ -39,14 +43,18 @@ public class UsuariosServlet extends HttpServlet {
         String edad = request.getParameter("edad");
         
         ServicioUsuarios srvU = new ServicioUsuarios();
-        
+        srvU.setChivatoListener((String mensaje) -> {
+            request.getSession().setAttribute("mensajeError", "ERROR al crear: "+mensaje);
+        });
         if (request.getMethod() == "POST") {
             Usuario usuario = srvU.crear(email, password, nombre, edad);
             if (usuario != null && usuario.getId() >= 0) {
+                request.getSession().setAttribute("emailUsuario",email);
                 request.getRequestDispatcher("registrado.jsp")
                         .forward(request, response);
             }else{
-                response.getWriter().println("<h1>ERROR al crear</h1>");
+                request.getRequestDispatcher("registrarse.jsp")
+                        .forward(request, response);
             }
         }
     }

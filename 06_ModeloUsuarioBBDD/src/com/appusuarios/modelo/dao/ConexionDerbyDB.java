@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.appusuarios.modelo;
+package com.appusuarios.modelo.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class ConexionDerbyDB {
     
-    public static final  String URL_CONEXION = "jdbc:derby://localhost:1527/db_usuarios";
+    public static final  String URL_CONEXION = "jdbc:derby://localhost:1527/db_users";
     public static final  String USUARIO_DB = "root";
     public static final  String PASSWORD_DB = "1234";
     private static boolean driversCargados = false;

@@ -10,7 +10,7 @@ package com.appusuarios.modelo;
  * @author pc
  */
 public class Usuario {
-    
+
     private int id;
     private String email;
     private String password;
@@ -25,7 +25,16 @@ public class Usuario {
         this.edad = edad;
     }
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if (super.equals(obj)) {
+            return true;
+        } else //To change body of generated methods, choose Tools | Templates.
+        {
+            Usuario usu = (Usuario) obj;
+            return usu.getId() == this.getId() && usu.getEmail().equals(this.getEmail());
+        }
+    }
 
     /**
      * Get the value of edad
