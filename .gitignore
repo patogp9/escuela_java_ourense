@@ -44,3 +44,4 @@ nbdist/
 ./05_JavaWeb_Servlets/lib/db-derby-10.14.2.0-bin/index.html
 ./05_JavaWeb_Servlets/lib/db-derby-10.14.2.0-bin/KEYS
 /.metadata/
+/derby_bbdd
