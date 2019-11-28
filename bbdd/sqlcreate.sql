@@ -49,4 +49,3 @@ INSERT INTO `db_usuarios`.`usuario` (`id`, `email`, `nombre`, `password`, `edad`
 INSERT INTO `db_usuarios`.`usuario` (`id`, `email`, `nombre`, `password`, `edad`) VALUES (DEFAULT, 'jjweed@www.weed', 'Jota Fumeiro', 'aaaa', 28);
 
 COMMIT;
-

@@ -5,11 +5,13 @@
  */
 package com.appusuarios.modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author pc
  */
-public class Usuario {
+public class Usuario implements Serializable{
 
     private int id;
     private String email;
@@ -17,7 +19,7 @@ public class Usuario {
     private String nombre;
     private int edad;
 
-    public Usuario(int id, String email, String password, String nombre, int edad) {
+    public Usuario(int id, String email, String password, String nombre, int edad){
         this.id = id;
         this.email = email;
         this.password = password;
